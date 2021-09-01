@@ -8,7 +8,9 @@ def main():
 
     arvore_1 = Arvore(randomBase)
     arvore_1.treinamento_resultado('entropy')
-    #arvore_2 = Arvore(randomBase, 'gini')
+    
+    arvore_2 = Arvore(randomBase)
+    arvore_2.treinamento_resultado('gini')
 
     #knN_1 = KnN(randomBase, 'euclidian', 3)
     #knN_2 = KnN(randomBase, 'euclidian', 3)
@@ -18,7 +20,7 @@ def main():
     #knN_6 = KnN(randomBase, 'vdm', 3)
 
     print(arvore_1)
-    #print(arvore_2)
+    print(arvore_2)
 
     #print(knN_1)
     #print(knN_2)
