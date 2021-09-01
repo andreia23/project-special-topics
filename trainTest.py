@@ -26,8 +26,6 @@ class Train_test:
     
         dataset = pd.read_csv(arquivo, header=None)
 
-        columns = len(dataset.columns)
-
         y = dataset[index_Y]
         X = dataset.loc[:,index_inicial:index_final]
 

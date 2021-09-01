@@ -3,10 +3,11 @@ from trainTest import Train_test
 import pandas as pd
 
 def main():
-    randomBase_1 = Train_test('iris')
-    randomBase_1.eighty_by_twenty()
+    randomBase = Train_test('iris')
+    randomBase.eighty_by_twenty(4, 0, 3)
 
-    arvore_1 = Arvore().treinamento_resultado(randomBase, 'entropy')
+    arvore_1 = Arvore(randomBase)
+    arvore_1.treinamento_resultado('entropy')
     #arvore_2 = Arvore(randomBase, 'gini')
 
     #knN_1 = KnN(randomBase, 'euclidian', 3)
@@ -16,7 +17,7 @@ def main():
     #knN_5 = KnN(randomBase, 'vdm', 3)
     #knN_6 = KnN(randomBase, 'vdm', 3)
 
-    #print(arvore_1)
+    print(arvore_1)
     #print(arvore_2)
 
     #print(knN_1)
