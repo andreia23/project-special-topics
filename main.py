@@ -13,7 +13,7 @@ def main():
 
     while True:
 
-        optionDataset = input("\nEscolha uma opção: \n" + "1- Wine\n" + "2- Balance-scale\n" + "3- Exit\n")
+        optionDataset = input("\nEscolha uma opção: \n" + "1- Wine\n" + "2- Balance-scale\n" + "3- Exit\n" + "\n>> ")
         if optionDataset in ("1"):
             run("wine", "inicial", 13)
         elif optionDataset in ("2"): 
@@ -34,11 +34,11 @@ def run(name, y_position, numberAttributes):
     
     arvore_2 = Arvore(randomBase)
     arvore_2.treinamento_resultado('gini')
+
     knN_1 = KnN(randomBase)
     knN_1.treinamento_resultado('euclidean', 5)
     knN_2 = KnN(randomBase)
     knN_2.treinamento_resultado('euclidean', 10)
-    
     knN_3 = KnN(randomBase)
     knN_3.treinamento_resultado('euclidean', 15)
     
@@ -48,14 +48,16 @@ def run(name, y_position, numberAttributes):
     knN_5.treinamento_resultado('manhattan', 10)
     knN_6 = KnN(randomBase)
     knN_6.treinamento_resultado('manhattan', 15)
-    print(arvore_1)
-    print(arvore_2)
-    print(knN_1)
-    print(knN_2)
-    print(knN_3)
-    print(knN_4)
-    print(knN_5)
-    print(knN_6)
+
+    print(f"Arvore_1: {arvore_1}\n")
+    print(f"Arvore_2: {arvore_2}\n")
+
+    print(f"KnN_1: {knN_1}\n")
+    print(f"KnN_2: {knN_2}\n")
+    print(f"KnN_3: {knN_3}\n")
+    print(f"KnN_4: {knN_4}\n")
+    print(f"KnN_5: {knN_5}\n")
+    print(f"KnN_6: {knN_6}\n")
 
 if __name__ == '__main__':
     main()
