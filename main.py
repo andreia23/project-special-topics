@@ -10,7 +10,22 @@ import pandas as pd
 #Dataset("balance-scale", "inicial", 4) 
 
 def main():
-    dataset = Dataset("iris", "final", 4)
+
+    while True:
+
+        optionDataset = input("\nEscolha uma opção: \n" + "1- Wine\n" + "2- Balance-scale\n" + "3- Exit\n")
+        if optionDataset in ("1"):
+            run("wine", "inicial", 13)
+        elif optionDataset in ("2"): 
+            run("balance-scale", "inicial", 4)
+        elif optionDataset in ("3"):
+            break
+        else:
+            print("Opção inválida") 
+    
+def run(name, y_position, numberAttributes):
+
+    dataset = Dataset(name, y_position, numberAttributes)
     randomBase = Train_test(dataset)
     randomBase.eighty_by_twenty()
 
@@ -19,10 +34,8 @@ def main():
     
     arvore_2 = Arvore(randomBase)
     arvore_2.treinamento_resultado('gini')
-
     knN_1 = KnN(randomBase)
     knN_1.treinamento_resultado('euclidean', 5)
-
     knN_2 = KnN(randomBase)
     knN_2.treinamento_resultado('euclidean', 10)
     
@@ -31,16 +44,12 @@ def main():
     
     knN_4 = KnN(randomBase)
     knN_4.treinamento_resultado('manhattan', 5)
-
     knN_5 = KnN(randomBase)
     knN_5.treinamento_resultado('manhattan', 10)
-
     knN_6 = KnN(randomBase)
     knN_6.treinamento_resultado('manhattan', 15)
-
     print(arvore_1)
     print(arvore_2)
-
     print(knN_1)
     print(knN_2)
     print(knN_3)
